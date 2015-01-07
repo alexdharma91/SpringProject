@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
 <@macro.pageHeader headerText=title/>
 <@macro.navigator active=0/>
 
@@ -27,30 +26,17 @@
         <th>Удалить</th>
     </tr>
     </thead>
-    <tfoot>
-    <tr>
-        <td>Иван</td>
-        <td>Петров</td>
-        <td><button class="btn-primary">Редактировать</button></td>
-        <td><button class="btn-danger">Удалить</button></td>
-    </tr>
-    </tfoot>
     <tbody>
+    <#list employees as employee>
     <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
+        <td>${employee.name}</td>
+        <td>${employee.surName}</td>
         <td><button class="btn-primary">Редактировать</button></td>
         <td><button class="btn-danger">Удалить</button></td>
     </tr>
-    <tr>
-        <td>Джамшут</td>
-        <td>ППППП</td>
-        <td><button class="btn-primary">Редактировать</button></td>
-        <td><button class="btn-danger">Удалить</button></td>
-    </tr>
+    </#list>
     </tbody>
 </table>
-
 
 </body>
 </html>
