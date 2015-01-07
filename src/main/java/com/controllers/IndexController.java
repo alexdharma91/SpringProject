@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.model.Absence;
 import com.model.Employee;
 import com.service.PersistentService;
 import org.springframework.stereotype.Controller;
@@ -38,7 +39,9 @@ public class IndexController {
 
     @RequestMapping(value = "order-absence")
     public String orderAbsence(ModelMap model){
-        model.addAttribute("active" ,2);
+        List<Absence> absences = persistentService.getAll(Absence.class);
+        model.addAttribute("absences" , absences);
+        model.addAttribute("active" , 2);
         model.addAttribute("title", "Order Absence");
         return "order_absence";
     }
