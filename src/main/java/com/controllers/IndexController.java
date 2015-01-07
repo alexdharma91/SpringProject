@@ -1,9 +1,6 @@
 package com.controllers;
 
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import com.service.PersistentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,14 +15,8 @@ import java.util.ResourceBundle;
 @RequestMapping(value = "/")
 public class IndexController {
 
-    @Resource(name = "dataSource")
-    DriverManagerDataSource dataSource;
-
-    JdbcTemplate jdbcTemplate;
-    NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
-    @Resource(name = "messageSource")
-    ReloadableResourceBundleMessageSource resourceBundleMessageSource;
+    @Resource
+    PersistentService persistentService;
 
     @RequestMapping(value = "employees",  method =  RequestMethod.GET)
     public String getMovie1(ModelMap model) {
@@ -51,7 +42,6 @@ public class IndexController {
     @RequestMapping(value = "login", method =  RequestMethod.GET)
     public String loginGet(ModelMap model) {
         model.addAttribute("title", "Spring MVC");
-
 
         return "login";
     }
