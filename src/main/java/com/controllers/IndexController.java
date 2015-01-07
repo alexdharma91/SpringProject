@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.model.Employee;
 import com.service.PersistentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -20,6 +22,8 @@ public class IndexController {
 
     @RequestMapping(value = "employees",  method =  RequestMethod.GET)
     public String getMovie1(ModelMap model) {
+        List<Employee> employees =  persistentService.getAll(Employee.class);
+        model.addAttribute("employees", employees);
         model.addAttribute("active" , 0);
         model.addAttribute("title", "Employees");
         return "index";
