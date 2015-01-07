@@ -12,61 +12,33 @@
 </head>
 <body>
 
-
 <@macro.pageHeader headerText=title/>
 <@macro.navigator active=2/>
-
 
 <button class="btn-success createEntity">Создать отсутствие</button>
 
 <table class="table">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Surname</th>
         <th>Дата начала</th>
         <th>Дата конца</th>
-        <th>Тип отсутствия</th>
+        <th>Тип</th>
+        <th>Редактировать</th>
+        <th>Удалить</th>
     </tr>
     </thead>
     <tbody>
+    <#list absences as absence>
     <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>01.10</td>
-        <td>02.10</td>
-        <td>Отпуск</td>
+        <td>${absence.startDate}</td>
+        <td>${absence.endDate}</td>
+        <td>${absence.type}</td>
+        <td><button class="btn-primary">Редактировать</button></td>
+        <td><button class="btn-danger">Удалить</button></td>
     </tr>
-    <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>01.10</td>
-        <td>02.10</td>
-        <td>Больничный</td>
-    </tr>
-    <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>01.10</td>
-        <td>02.10</td>
-        <td>Отгул</td>
-    </tr>
-    <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>01.10</td>
-        <td>02.10</td>
-        <td>Отгул</td>
-    </tr>
+    </#list>
     </tbody>
 </table>
-
-
-
-
-
-
-
 
 </body>
 </html>
