@@ -16,7 +16,7 @@ public class Payout {
     @Column(name = "EMPLOYEE_ID")
     private Long employeeId;
 
-    @Column(name = "EMPLOYEE_ID")
+    @Column(name = "INITIATOR_ID")
     private Long initiatorId;
 
     @Column(name = "AMOUNT")
