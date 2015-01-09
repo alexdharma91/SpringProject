@@ -1,49 +1,23 @@
 package com.controllers;
 
-import com.model.Absence;
-import com.model.Employee;
-import com.service.PersistentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.Resource;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 @Controller
 @RequestMapping(value = "/")
-public class IndexController {
+public class IndexController extends AbstractController{
 
-    @Resource
-    PersistentService persistentService;
+    @RequestMapping(method =  RequestMethod.GET)
+    public String aaa(ModelMap model) {
+        model.addAttribute("title", "Spring MVC");
 
-    @RequestMapping(value = "employees",  method =  RequestMethod.GET)
-    public String getMovie1(ModelMap model) {
-        List<Employee> employees =  persistentService.getAll(Employee.class);
-        model.addAttribute("employees", employees);
-        model.addAttribute("active" , 0);
-        model.addAttribute("title", "Employees");
         return "index";
-    }
-
-    @RequestMapping(value = "payment-fond", method =  RequestMethod.GET)
-    public String paymentFond(ModelMap model){
-      model.addAttribute("active" ,1);
-      model.addAttribute("title", "Payment Fond");
-      return "payment_fond";
-    }
-
-    @RequestMapping(value = "order-absence")
-    public String orderAbsence(ModelMap model){
-        List<Absence> absences = persistentService.getAll(Absence.class);
-        model.addAttribute("absences" , absences);
-        model.addAttribute("active" , 2);
-        model.addAttribute("title", "Order Absence");
-        return "order_absence";
     }
 
     @RequestMapping(value = "login", method =  RequestMethod.GET)
