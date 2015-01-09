@@ -5,6 +5,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="<@spring.url "/resources/css/styles.css"/>">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"/>
     <script src="<@spring.url "/resources/js/client.js" />"></script>
@@ -13,30 +14,7 @@
 <body>
 
 <@macro.pageHeader headerText=title/>
-<@macro.navigator active=0/>
-
-<button class="createEntity btn-success">Создать сорудника</button>
-
-<table class="table">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Редактировать</th>
-        <th>Удалить</th>
-    </tr>
-    </thead>
-    <tbody>
-    <#list employees as employee>
-    <tr>
-        <td>${employee.name}</td>
-        <td>${employee.surName}</td>
-        <td><button class="btn-primary">Редактировать</button></td>
-        <td><button class="btn-danger">Удалить</button></td>
-    </tr>
-    </#list>
-    </tbody>
-</table>
+<@macro.navigator active=-1/>
 
 </body>
 </html>
