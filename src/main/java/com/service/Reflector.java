@@ -2,6 +2,7 @@ package com.service;
 
 import com.google.common.collect.Lists;
 
+import org.springframework.cache.annotation.Cacheable;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.List;
@@ -26,6 +27,7 @@ public class Reflector {
         }
     }
 
+    @Cacheable(value="weatherCache")
     public static List<ClassField> getFields(Class targetClass){
        List result = Lists.newArrayList();
 
