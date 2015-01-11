@@ -3,10 +3,13 @@ package com.service;
 import com.google.common.collect.Lists;
 
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Component;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.List;
 
+@Component
 public class Reflector {
 
     public static class ClassField{
@@ -28,7 +31,7 @@ public class Reflector {
     }
 
     @Cacheable(value="weatherCache")
-    public static List<ClassField> getFields(Class targetClass){
+    public List<ClassField> getFields(Class targetClass){
        List result = Lists.newArrayList();
 
        for (Field field : targetClass.getDeclaredFields()){
