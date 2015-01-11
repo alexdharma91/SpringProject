@@ -15,6 +15,7 @@ public class Reflector {
     public static class ClassField{
         private String name;
         private String type;
+        private String value = "";
 
         public ClassField(String name, String type){
            this.name = name;
@@ -28,6 +29,10 @@ public class Reflector {
         public String getType() {
             return type;
         }
+
+        public String getValue() {
+            return value;
+        }
     }
 
     @Cacheable(value="weatherCache")
@@ -38,6 +43,10 @@ public class Reflector {
            boolean required = false;
 
            for(Annotation annotation : field.getAnnotations()){
+               if(annotation.annotationType().toString().equals("interface javax.persistence.Id")){
+                   break;
+               }
+
                if(annotation.annotationType().toString().equals("interface javax.persistence.Column")){
                    required = true;
                }
