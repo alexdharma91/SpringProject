@@ -17,10 +17,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.lang.reflect.InvocationTargetException;
-import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping(value = "/employee")
@@ -51,7 +48,7 @@ public class EmployeeController extends AbstractController {
     }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public String createPost(@ModelAttribute("fields") List<Reflector.ClassField> fields,
+    public String createPost(@ModelAttribute("fields") ArrayList<Reflector.ClassField> fields,
                              @ModelAttribute("test") String test, SessionStatus status) {
 
          Map map  = Maps.newHashMap();
