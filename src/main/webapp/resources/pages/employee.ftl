@@ -20,6 +20,7 @@
     <button class="createEntity btn-success">Создать сорудника</button>
 </a>
 
+<#if employees?size gt 0>
 <table class="table">
     <thead>
     <tr>
@@ -30,18 +31,17 @@
     </tr>
     </thead>
     <tbody>
-    <#list employees as employee>
-    <tr>
-        <td>${employee.name}</td>
-        <td>${employee.surName}</td>
-        <td><button class="btn-primary">Редактировать</button></td>
-        <td><button class="btn-danger">Удалить</button></td>
-    </tr>
-    </#list>
+        <#list employees as employee>
+        <tr>
+            <td>${employee.name!''}</td>
+            <td>${employee.surName!''}</td>
+            <td><button class="btn-primary">Редактировать</button></td>
+            <td><button class="btn-danger">Удалить</button></td>
+        </tr>
+        </#list>
     </tbody>
 </table>
-
-
+</#if>
 
 </body>
 </html>
