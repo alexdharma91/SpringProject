@@ -31,12 +31,14 @@
         </tr>
         </thead>
         <tbody>
-            <#list fields as field>
             <tr>
-                <td>${field.name}</td>
-                <td><input class="form-control" type="number" name="${field.name}" value="ie"></td>
+                <td>Имя</td>
+                <td><input class="form-control" name="name" value="${employee.name!''}"></td>
             </tr>
-            </#list>
+            <tr>
+                <td>Фамилия</td>
+                <td><input class="form-control" name="surName" value="${employee.surName!''}"></td>
+            </tr>
         </tbody>
     </table>
 
