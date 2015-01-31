@@ -15,7 +15,9 @@
 <@macro.pageHeader headerText=title/>
 <@macro.navigator active=2/>
 
-<button class="btn-success createEntity">Создать отсутствие</button>
+<a href="/absence/create">
+    <button class="btn-success createEntity">Создать отсутствие</button>
+</a>
 
 <table class="table">
     <thead>
