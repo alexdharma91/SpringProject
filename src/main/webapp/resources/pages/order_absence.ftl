@@ -35,8 +35,21 @@
         <td>${absence.startDate}</td>
         <td>${absence.endDate}</td>
         <td>${absence.type}</td>
-        <td><button class="btn-primary">Редактировать</button></td>
-        <td><button class="btn-danger">Удалить</button></td>
+
+
+
+        <td> <a href="/absence/edit?absenceId=${absence.id!''}">
+            <button class="btn-primary">Редактировать</button>
+        </a></td>
+
+        <td> <a href="/absence/delete?absenceId=${absence.id!''}">
+            <button class="btn-danger">Удалить</button>
+        </a></td>
+
+
+
+
+
     </tr>
     </#list>
     </tbody>
