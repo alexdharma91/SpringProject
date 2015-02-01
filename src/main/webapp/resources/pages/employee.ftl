@@ -32,16 +32,20 @@
     <tbody>
     <#list employees as employee>
     <tr>
-        <td>${employee.name}</td>
-        <td>${employee.surName}</td>
-        <td><button class="btn-primary">Редактировать</button></td>
-        <td><button class="btn-danger">Удалить</button></td>
+        <td>${employee.name!''}</td>
+        <td>${employee.surName!''}</td>
+        <td> <a href="/employee/edit?employeeId=${employee.id!''}">
+            <button class="btn-primary">Редактировать</button>
+        </a></td>
+
+        <td> <a href="/employee/delete?employeeId=${employee.id!''}">
+            <button class="btn-danger">Удалить</button>
+        </a></td>
+
     </tr>
     </#list>
     </tbody>
 </table>
-
-
 
 </body>
 </html>
