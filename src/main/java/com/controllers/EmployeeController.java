@@ -66,5 +66,10 @@ public class EmployeeController extends AbstractController {
         return "createEmploee";
     }
 
+    @RequestMapping(value = "delete", method = RequestMethod.GET)
+    public String deleteGet(@RequestParam(value = "employeeId") Long employeeId){
+        persistentService.delete(Employee.class, employeeId);
+        return "redirect:/employee/show";
+    }
 
 }
