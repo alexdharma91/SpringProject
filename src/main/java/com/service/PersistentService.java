@@ -61,4 +61,9 @@ public class PersistentService {
         getHibernateTemplate().delete(entity);
     }
 
+    public <T> void delete(Class <T> clazz, Long id){
+         getHibernateTemplate().delete(this.get(clazz, id));
+    }
+
+
 }
