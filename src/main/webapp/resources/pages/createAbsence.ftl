@@ -15,7 +15,7 @@
 
 
 <#if status == 'creation'>
-<form method="POST" action="/employee/create">
+<form method="POST" action="/absence/create">
 
     <table class="table">
         <thead>
@@ -37,11 +37,11 @@
 
         <tr>
             <td>Начальная дата</td>
-            <td><input class="form-control" type="date" name="surName" value="${absence.surName!''}"></td>
+            <td><input class="form-control" type="date" name="startDate" value="${absence.startDate?datetime!''}"></td>
         </tr>
         <tr>
             <td>Конечная дата</td>
-            <td><input class="form-control" type="date" name="surName" value="${absence.surName!''}"></td>
+            <td><input class="form-control" type="date" name="endDate" value="${absence.endDate?datetime!''}"></td>
         </tr>
 
         </tbody>
