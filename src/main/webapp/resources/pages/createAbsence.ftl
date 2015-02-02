@@ -28,7 +28,7 @@
 
         <tr>
             <td>Тип</td>
-            <td><select name="carlist" value="${absence.type!''}">
+            <td><select name="type" value="${absence.type!''}">
             <option value="0">Отпуск</option>
             <option value="1">Отгул больничный</option>
             <option value="2">Opel</option>

@@ -32,11 +32,9 @@
     <tbody>
     <#list absences as absence>
     <tr>
-        <td>${absence.startDate}</td>
-        <td>${absence.endDate}</td>
-        <td>${absence.type}</td>
-
-
+        <td>${absence.startDate!''}</td>
+        <td>${absence.endDate!''}</td>
+        <td>${absence.type!''}</td>
 
         <td> <a href="/absence/edit?absenceId=${absence.id!''}">
             <button class="btn-primary">Редактировать</button>
