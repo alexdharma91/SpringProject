@@ -1,5 +1,7 @@
 package com.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -17,9 +19,11 @@ public class Absence {
     private Long employeeId;
 
     @Column(name = "START_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
 
     @Column(name = "END_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
 
     @Column(name = "TYPE")
