@@ -37,11 +37,11 @@
 
         <tr>
             <td>Начальная дата</td>
-            <td><input class="form-control" type="date" name="startDate" value="${absence.startDate?datetime!''}"></td>
+            <td><input class="form-control" type="date" name="startDate" value="${absence.startDate?string('yyyy-MM-dd')!'?'}"></td>
         </tr>
         <tr>
             <td>Конечная дата</td>
-            <td><input class="form-control" type="date" name="endDate" value="${absence.endDate?datetime!''}"></td>
+            <td><input class="form-control" type="date" name="endDate" value="${absence.endDate?string('yyyy-MM-dd')!'?'}"></td>
         </tr>
 
         </tbody>
