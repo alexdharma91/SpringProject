@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
@@ -17,6 +18,8 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/absence")
 public class AbsenceController extends AbstractController {
+
+    private static final Logger logger = Logger.getLogger(AbsenceController.class);
 
     @RequestMapping(value = "show")
     public String show(ModelMap model) {
