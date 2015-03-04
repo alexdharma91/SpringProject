@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<@macro.mainPageLink 'absence'/>
 
 <#if status == 'creation'>
 <form method="POST" action="/absence/create">

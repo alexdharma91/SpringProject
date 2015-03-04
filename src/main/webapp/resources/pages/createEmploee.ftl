@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<@macro.mainPageLink 'epmloyee'/>
 
 <#if status == 'created'>
     <h1>Успешно создан ${entity}</h1>

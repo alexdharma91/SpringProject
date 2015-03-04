@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<@macro.mainPageLink 'payout'/>
 
 <#if status == 'creation'>
 <form method="POST" action="/payout/create">
