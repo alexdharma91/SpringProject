@@ -15,42 +15,39 @@
 <@macro.pageHeader headerText=title/>
 <@macro.navigator active=1/>
 
-<button class="btn-success createEntity">Создать выплату</button>
+<a href="/payout/create">
+    <button class="btn-success createEntity">Создать выплату</button>
+</a>
 
 <table class="table">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Surname</th>
+        <th>Отправитель</th>
+        <th>Получатель</th>
         <th>Сумма</th>
-        <th>Налог</th>
+        <th>Тип</th>
+        <th>Редактировать</th>
+        <th>Удалить</th>
     </tr>
     </thead>
     <tbody>
+<#list payouts as payout>
     <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>60000</td>
-        <td>10000</td>
+        <td>${payout.initiatorId!''}</td>
+        <td>${payout.employeeId!''}</td>
+        <td>${payout.amount!''}</td>
+        <td>${payout.type!''}</td>
+
+        <td> <a href="/payout/edit?payoutId=${payout.id!''}">
+            <button class="btn-primary">Редактировать</button>
+        </a></td>
+
+        <td> <a href="/payout/delete?payoutId=${payout.id!''}">
+            <button class="btn-danger">Удалить</button>
+        </a></td>
+
     </tr>
-    <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>60000</td>
-        <td>10000</td>
-    </tr>
-    <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>60000</td>
-        <td>10000</td>
-    </tr>
-    <tr>
-        <td>Дмитрий</td>
-        <td>Петроы</td>
-        <td>60000</td>
-        <td>10000</td>
-    </tr>
+</#list>
     </tbody>
 </table>
 
