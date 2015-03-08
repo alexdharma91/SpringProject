@@ -13,12 +13,18 @@ import java.util.ResourceBundle;
 @RequestMapping(value = "/")
 public class IndexController extends AbstractController{
 
-    @RequestMapping(method =  RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String aaa(ModelMap model) {
-        model.addAttribute("title", "Spring MVC");
+        return "redirect:/index";
+    }
 
+    @RequestMapping(value = "index",method = RequestMethod.GET)
+    public String bbb(ModelMap model){
+        model.addAttribute("title", "Spring MVC");
         return "index";
     }
+
+
 
     @RequestMapping(value = "login", method =  RequestMethod.GET)
     public String loginGet(ModelMap model) {
