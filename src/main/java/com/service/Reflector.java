@@ -16,6 +16,8 @@ public class Reflector {
         private String name;
         private String type;
 
+        public ClassField(){}
+
         public ClassField(String name, String type){
            this.name = name;
            this.type = type;
