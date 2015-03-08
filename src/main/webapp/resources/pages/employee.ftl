@@ -25,6 +25,8 @@
     <tr>
         <th>Name</th>
         <th>Surname</th>
+        <th>Login</th>
+        <th>Password</th>
         <th>Редактировать</th>
         <th>Удалить</th>
     </tr>
@@ -34,6 +36,8 @@
     <tr>
         <td>${employee.name!''}</td>
         <td>${employee.surName!''}</td>
+        <td>${employee.login!''}</td>
+        <td>${employee.password!''}</td>
         <td> <a href="/employee/edit?employeeId=${employee.id!''}">
             <button class="btn-primary">Редактировать</button>
         </a></td>

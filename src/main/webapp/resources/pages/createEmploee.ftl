@@ -29,6 +29,8 @@
         <tr>
             <th>Поле</th>
             <th>Значение</th>
+            <th>Login</th>
+            <th>Password</th>
         </tr>
         </thead>
         <tbody>
@@ -39,6 +41,14 @@
             <tr>
                 <td>Фамилия</td>
                 <td><input class="form-control" name="surName" value="${employee.surName!''}"></td>
+            </tr>
+            <tr>
+                <td>Login</td>
+                <td><input class="form-control" name="surName" value="${employee.login!''}"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input class="form-control" name="surName" value="${employee.password!''}"></td>
             </tr>
         </tbody>
     </table>

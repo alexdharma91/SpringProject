@@ -19,6 +19,12 @@ public class Employee implements Serializable {
     @Column(name = "SUR_NAME")
     private String surName;
 
+    @Column(name = "LOGIN", unique = true)
+    private String login;
+
+    @Column(name = "PASSWORD")
+    private String password;
+
     public Long getId() {
         return id;
     }
@@ -44,4 +50,19 @@ public class Employee implements Serializable {
         this.name = name;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
 }
