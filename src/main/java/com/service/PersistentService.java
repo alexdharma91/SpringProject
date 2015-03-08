@@ -53,6 +53,10 @@ public class PersistentService {
         return (T)getHibernateTemplate().findByCriteria(allCriteria).get(0);
     }
 
+    public Object get(DetachedCriteria criteria){
+       return criteria.getClass().cast(getHibernateTemplate().findByCriteria(criteria).get(0));
+    }
+
     public <T> void deleteAll(List<T> entities){
         getHibernateTemplate().deleteAll(entities);
     }
