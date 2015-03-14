@@ -18,7 +18,7 @@
 </div>
 
 <div id="loginPanel">
-    <form action="http://localhost:8081/login" method="POST">
+    <form action="http://localhost:8081/log/in" method="POST">
         <input type="text" name="login" class="form-control login" placeholder="login" aria-describedby="sizing-addon2">
         <br />
         <input type="text" name="password" class="form-control" placeholder="password" aria-describedby="sizing-addon2">
